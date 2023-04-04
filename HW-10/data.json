@@ -1,7 +1,7 @@
 {
   "string": "abc",
   "number": 1,
-  "hello": "Ivan",
+  "hello": "IvaN",
   "boolean": true,
   "none": null,
   "array": [1,2,"3z"],
