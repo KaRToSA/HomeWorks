@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_wtf import FlaskForm
 from flask.json import jsonify
 from wtforms import StringField, validators, ValidationError
-
+import os
 
 app = Flask(__name__)
 app.config.update(
@@ -94,11 +94,11 @@ def third():
 # файла из папки ./files.
 # Файлы можно туда положить любые текстовые. А если такого нет - 404.
 
-@app.route('/serve/<path:filename>',methods=["GET",])
-def fourth(filename):
-    open = open( filename, 'r')
-    read_file = open.read()
-    open.close()
+@app.route('/serve/<path:filename>', methods =['GET', 'POST'])
+def show_file(filename):
+    opened_file = open(filename, 'r')
+    read_file = opened_file.read()
+    opened_file.close()
     return read_file
 
 if __name__ == '__main__':
